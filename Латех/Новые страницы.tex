@@ -1,0 +1,132 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{geometry}
+\usepackage{tikz}
+
+\geometry{left=25mm, right=15mm, top=20mm, bottom=20mm}
+
+\begin{document}
+
+% ==================== СТРАНИЦА 167 ====================
+\noindent 67] \hfill \S~4. НЕПРЕРЫВНОСТЬ (И РАЗРЫВЫ) ФУНКЦИЙ \hfill 167
+\vspace{0.5em}
+\hrule
+\vspace{1em}
+
+\noindent \textbf{67. Арифметические операции над непрерывными функциями.} Прежде чем перейти к примерам непрерывных функций, установим следующее простое предложение, которое позволит легко расширить их число.
+
+\vspace{0.5em}
+\noindent \textbf{Теорема.} \textit{Если две функции $f(x)$ и $g(x)$ определены в одном и том же промежутке $X$ и обе непрерывны в точке $x_0$, то в той же точке будут непрерывны и функции}
+\begin{equation*}
+    f(x) \pm g(x), \quad f(x) \cdot g(x), \quad \frac{f(x)}{g(x)},
+\end{equation*}
+\textit{последняя --- при условии, что $g(x_0) \neq 0$.}
+
+Это непосредственно вытекает из теорем о пределе суммы, разности, произведения и частного двух функций, имеющих порознь пределы [55].
+
+Остановимся для примера на частном двух функций. Предположение о непрерывности функций $f(x)$ и $g(x)$ в точке $x_0$ равносильно наличию равенств
+\begin{equation*}
+    \lim_{x \to x_0} f(x) = f(x_0), \quad \lim_{x \to x_0} g(x) = g(x_0).
+\end{equation*}
+Но отсюда, по теореме о пределе частного (так как предел знаменателя не нуль), имеем:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{f(x)}{g(x)} = \frac{f(x_0)}{g(x_0)},
+\end{equation*}
+а это равенство и означает, что функция $\frac{f(x)}{g(x)}$ непрерывна в точке $x_0$.
+
+\vspace{1em}
+\noindent \textbf{68. Примеры непрерывных функций.}
+
+\noindent 1$^\circ$ \textit{Целая и дробная рациональные функции.} Функция $f(x) = x$, очевидно, непрерывна во всем промежутке $(-\infty, +\infty)$: если $x_n \to x_0$, то $f(x_n) = x_n \to x_0 = f(x_0)$. Точно так же непрерывна и функция, сводящаяся тождественно к постоянной.
+
+Отсюда, на основании теоремы предыдущего п$^\circ$, вытекает уже непрерывность любого одночленного выражения
+\begin{equation*}
+    ax^m = a \cdot \overbrace{x \cdot x \cdot \dots \cdot x}^{m \text{ раз}}
+\end{equation*}
+как произведения непрерывных функций, а затем --- и многочлена (целой рациональной функции)
+\begin{equation*}
+    a_0x^n + a_1x^{n-1} + \dots + a_{n-1}x + a_n
+\end{equation*}
+как суммы непрерывных функций. Во всех упомянутых случаях непрерывность имеет место во всем промежутке $(-\infty, +\infty)$.
+
+% ==================== СТРАНИЦА 169 ====================
+\newpage
+\noindent 69] \hfill \S~4. НЕПРЕРЫВНОСТЬ (И РАЗРЫВЫ) ФУНКЦИЙ \hfill 169
+\vspace{0.5em}
+\hrule
+\vspace{1em}
+
+\noindent справедливо уже для всех значений $x$ (для $|x| \ge \frac{\pi}{2} > 1$ это следует из того, что $|\sin x| \le 1$). Далее, имеем:
+\begin{equation*}
+    \sin x - \sin x_0 = 2 \sin \frac{x - x_0}{2} \cdot \cos \frac{x + x_0}{2},
+\end{equation*}
+так что
+\begin{equation*}
+    |\sin x - \sin x_0| = 2 \cdot \left| \sin \frac{x - x_0}{2} \right| \cdot \left| \cos \frac{x + x_0}{2} \right| \le 2 \cdot \left| \sin \frac{x - x_0}{2} \right| \le 2 \cdot \frac{|x - x_0|}{2}
+\end{equation*}
+и, окончательно,
+\begin{equation}
+    |\sin x - \sin x_0| \le |x - x_0|,
+\end{equation}
+каковы бы ни были значения $x$ и $x_0$.
+
+Если задано любое $\varepsilon > 0$, то положим $\delta = \varepsilon$; при $|x - x_0| < \delta$ будет
+\begin{equation*}
+    |\sin x - \sin x_0| < \varepsilon,
+\end{equation*}
+что и доказывает непрерывность $\sin x$. Аналогично устанавливается и непрерывность функции $\cos x$ также при любом значении $x$.
+
+Отсюда, по теореме предыдущего п$^\circ$, вытекает уже непрерывность функций
+\begin{equation*}
+    \operatorname{tg} x = \frac{\sin x}{\cos x}, \quad \sec x = \frac{1}{\cos x}, \quad \operatorname{ctg} x = \frac{\cos x}{\sin x}, \quad \csc x = \frac{1}{\sin x}.
+\end{equation*}
+Исключение представляют для первых двух --- значения вида $(2k + 1)\frac{\pi}{2}$, обращающие $\cos x$ в 0, для последних двух --- значения вида $k\pi$, обращающие $\sin x$ в 0.
+
+\vspace{1em}
+\noindent \textbf{69. Односторонняя непрерывность. Классификация разрывов.} Выше с помощью равенства (1) мы определили понятие непрерывности функции $f(x)$ в точке $x_0$. При этом, вычисляя предел (1), мы могли приближать $x$ к $x_0$ и справа, и слева. Установим теперь понятие об односторонней непрерывности, или одностороннем разрыве, функции в данной точке.
+
+Говорят, что \textit{функция $f(x)$ непрерывна в точке $x_0$ \textbf{справа (слева)}}, если выполняется предельное соотношение:
+\begin{equation}
+\left.
+\begin{aligned}
+    f(x_0 + 0) &= \lim_{x \to x_0 + 0} f(x) = f(x_0) \\
+    [f(x_0 - 0) &= \lim_{x \to x_0 - 0} f(x) = f(x_0)].
+\end{aligned}
+\,\right\}
+\end{equation}
+
+
+\vspace{1.5em}
+\begin{center}
+    \begin{tikzpicture}[scale=1.5]
+
+        \draw[->,>=stealth] (-1.5,0) -- (3,0) node[right] {$x$};
+        \draw[->,>=stealth] (0,-0.5) -- (0,2.5) node[above] {$y$};
+        
+
+        \draw[thick, blue] (-1.2,0.5) to[out=20,in=200] (1,1.2);
+        \draw[fill=white, thick, blue] (1,1.2) circle (1.5pt);
+        
+
+        \draw[thick, blue] (1,1.8) to[out=-10,in=220] (2.7,2.2);
+        \draw[fill=blue] (1,1.8) circle (1.5pt);
+        
+
+        \draw[dashed] (1,0) -- (1,1.8);
+        \draw[dashed] (0,1.2) -- (1,1.2);
+        \draw[dashed] (0,1.8) -- (1,1.8);
+        
+
+        \node[below] at (1,0) {$x_0$};
+        \node[left] at (0,1.2) {$f(x_0 - 0)$};
+        \node[left] at (0,1.95) {$f(x_0) = f(x_0 + 0)$};
+        \node[below, blue] at (1.8,1.7) {$f(x)$};
+    \end{tikzpicture}
+    \\
+    \vspace{0.5em}
+    \small \textbf{Рис. 1.} Иллюстрация к пункту 69: функция непрерывна справа в точке $x_0$, но терпит разрыв (скачок) слева.
+\end{center}
+
+\end{document}

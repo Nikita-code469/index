@@ -1,0 +1,95 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{tikz}
+
+\geometry{left=25mm, right=20mm, top=20mm, bottom=20mm}
+
+\begin{document}
+
+
+\noindent 65] \hfill \S~3. КЛАССИФИКАЦИЯ БЕСКОНЕЧНО МАЛЫХ \hfill 163
+\vspace{1em}
+\hrule
+\vspace{1.5em}
+
+Для упрощения этой формулы вспомним, что
+\begin{equation*}
+    \alpha \doteq \sin \alpha = \frac{OD}{Oo} = \frac{R - r}{d}
+\end{equation*}
+--- в предположении, что $R - r$ мало относительно $d$. В том же предположении
+\begin{equation*}
+    \sqrt{d^2 - (R - r)^2} = d\sqrt{1 - \left(\frac{R - r}{d}\right)^2} \doteq d \left[ 1 - \frac{1}{2} \left( \frac{R - r}{d} \right)^2 \right].
+\end{equation*}
+
+После подстановки этих значений и преобразований, получим окончательную формулу:
+\begin{equation*}
+    l \doteq \pi(R + r) + 2d + \frac{(R - r)^2}{d}.
+\end{equation*}
+
+3) При разбивке дуг окружностей на местности имеет значение следующая задача: \textit{найти отношение стрелы $f = DB$ дуги $ABC$ окружности к стреле $f_1 = D_1B_1$ половины $AB_1B$ этой дуги (рис. 27).}
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=1.2]
+    
+        \coordinate (O) at (0,0);
+        \coordinate (B) at (0,3);
+        \coordinate (A) at (-2.2,2.04);
+        \coordinate (C) at (2.2,2.04);
+        \coordinate (D) at (0,2.04);
+        
+        \draw[thick] (A) arc (137:43:3);
+        
+        \draw (A) -- (C);
+        \draw (O) -- (A);
+        \draw (O) -- (C);
+        \draw (O) -- (B);
+        
+        \coordinate (B1) at (-1.15, 2.77);
+        \draw[dashed] (A) arc (137:112.5:3);
+        \draw[dashed] (A) -- (B);
+        
+        \node[left] at (A) {$A$};
+        \node[right] at (C) {$C$};
+        \node[above] at (B) {$B$};
+        \node[below right] at (D) {$D$};
+        \node[below] at (O) {$O$};
+        \node[above left] at (B1) {$B_1$};
+        \node[below] at (-0.6, 2.4) {$D_1$};
+        
+        \draw[<->] (0.2, 2.04) -- (0.2, 3) node[midway, right] {$f$};
+        \draw[<->, dashed] (-0.8, 2.5) -- (-0.4, 2.9) node[midway, above] {$f_1$};
+        
+        \node at (0.2, 0.8) {$\varphi$};
+        \node at (-1.1, 1.5) {$r$};
+    \end{tikzpicture}
+    \small \textbf{Рис. 27}
+\end{wrapfigure}
+
+Если положить радиус окружности равным $r$, $\angle AOB = \varphi$, то $\angle AOB_1 = \frac{\varphi}{2}$ и
+\begin{gather*}
+    f = DB = r(1 - \cos \varphi), \\
+    f_1 = r\left(1 - \cos \frac{\varphi}{2}\right).
+\end{gather*}
+
+Таким образом, искомое отношение равно
+\begin{equation*}
+    \frac{f}{f_1} = \frac{1 - \cos \varphi}{1 - \cos \frac{\varphi}{2}}.
+\end{equation*}
+
+Выражение это слишком сложно, чтобы им удобно было пользоваться на практике. Найдем его предел при $\varphi \to 0$ (ибо для достаточно малых $\varphi$ это выражение можно приближенно заменить его пределом). С этой целью заменяем числитель и знаменатель их главными частями и сразу находим:
+\begin{equation*}
+    \lim \frac{f}{f_1} = \lim \frac{\frac{1}{2}\varphi^2}{\frac{1}{2}\left(\frac{\varphi}{2}\right)^2} = 4.
+\end{equation*}
+
+Итак, для дуг, соответствующих небольшому центральному углу, приближенно можно считать, что \textit{стрела полудуги вчетверо меньше стрелы дуги}. Это позволяет последовательно строить промежуточные точки дуги, для которой даны концы и середина.
+
+\vspace{1.5em}
+\noindent \textbf{65. Классификация бесконечно больших.} Заметим, что для бесконечно больших величин может быть развита подобная же классификация. Как и в \textbf{60}, будем считать рассматриваемые бесконечно большие величины функциями от одной и той же переменной $x$, которые стремятся к $+\infty$, когда $x$ стремится к $a$.
+
+\end{document}
