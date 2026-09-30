@@ -1,0 +1,211 @@
+@font-face {
+    font-family: 'arialmt';
+    src: url('fonts/Graphik.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+button, input, textarea, select {
+    font-family: inherit;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+   
+.search {
+border-radius: 0px;
+width: 100%;
+}
+
+table {
+    width: 50%; /* Ширина таблицы */
+    height: 50%;
+    border: 0;
+}
+  
+TD, TH {
+    padding: 0; /* Поля вокруг содержимого таблицы */
+    border: 1px solid black; /* Параметры рамки */
+}
+
+.a {
+width: 25%;
+
+}
+
+.b {
+width: 75%;
+}
+
+.color {
+background-color: #b5d0eb5b;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.content {
+    display: flex; /* Боковая панель и контент выстраиваются в ряд */
+    flex: 1;
+}
+
+body {
+    font-family: 'arialmt', sans-serif; /* Используем шрифт Arial */
+    background-image: url("img/sistemUI/fon.jpg");
+    background-color: #ffffff; /* Название цвета */
+    flex-direction: column;
+    display: flex;
+    min-height: 100vh;
+           
+}
+
+.footer {
+    background-color: #2b4ae75b;
+    padding: 20px;              /* Отступы вокруг текста */
+    text-align: center;         /* Выравнивание по центру */
+    font-size: 14px;            /* Размер шрифта */
+    color: #333;                /* Тёмно-серый текст */
+    width: 100%;
+    margin-top: auto;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #2b4ae75b;
+}
+
+header nav ul {
+display: flex;
+justify-content: space-between; /* Распределяет их по краям: первый слева, второй справа */
+list-style: none; /* Убирает точки у элементов списка */
+padding: 0;       /* Сбрасывает стандартные отступы списка */
+align-items: center;    /* Выравнивает логотип и текст по центру по вертикали */
+}
+
+header img {
+height: 40px;
+width: auto;
+}
+
+header h2 {
+margin: 0;
+}
+
+header input {
+border-radius: 100px;
+height: 100%;
+}
+
+.aside_1 {
+    width: 15%; /* Задайте желаемую ширину боковой панели */
+    flex-shrink: 0;
+    background-color: #2b4ae7b5;
+}
+
+.aside_2 {
+    width: 30%; /* Задайте желаемую ширину боковой панели */
+    flex-shrink: 0;
+    background-color: #2240d7b1;
+}
+
+
+aside nav ul {
+    list-style: none; /* Убирает стандартные маркеры списка */
+    padding: 0;       /* Сбрасывает стандартные отступы списка */
+}
+
+aside input {
+width: 100%;
+height: 5%;
+border-radius: 10px;
+border: 1px solid #000000;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.slider {
+    width: 100%; /* Фиксированная ширина */
+    overflow: hidden; /* Скрываем выходящие за границы изображения */
+    position: relative;
+    margin-top: 15px;
+}
+
+.slides {
+    display: flex; /* Располагаем слайды в ряд */
+    width: 100%; /* Делаем ширину в три раза больше (по количеству слайдов) */
+    transition: transform 0.3s ease-in-out; /* Плавное переключение слайдов */
+}
+
+.slide {
+    width: 100%; /* Каждый слайд занимает всю ширину контейнера */
+    flex-shrink: 0; /* Запрещаем уменьшение элементов внутри flex-контейнера */
+}
+
+.slide img {
+    width: 30%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+  /* Переключение слайдов при выборе радиокнопки */
+#slide1:checked ~ .slides {
+transform: translateX(0%);
+}
+#slide2:checked ~ .slides {
+transform: translateX(-100%);
+}
+#slide3:checked ~ .slides {
+transform: translateX(-200%);
+}
+#slide4:checked ~ .slides {
+transform: translateX(-300%);
+}
+#slide5:checked ~ .slides {
+transform: translateX(-400%);
+}
+#slide6:checked ~ .slides {
+transform: translateX(-500%);
+}
+#slide7:checked ~ .slides {
+transform: translateX(-600%);
+}
+
+.controls {
+    text-align: center; /* Размещаем точки по центру */
+    margin-top: 10px; /* Добавляем отступ сверху */
+}
+
+.controls label {
+    display: inline-block; /* Размещаем точки в строку */
+    width: 15px; /* Размер точки */
+    height: 15px;
+    background: rgb(108, 96, 96); /* Серый цвет точки */
+    border-radius: 50%; /* Делаем точки круглыми */
+    margin: 5px; /* Добавляем небольшой отступ между ними */
+    cursor: pointer; /* Делаем курсор в виде руки при наведении */
+}
+
+/* Переключаем цвет точки при выборе конкретного слайда */
+#slide1:checked ~ .controls label[for="slide1"],
+#slide2:checked ~ .controls label[for="slide2"],
+#slide3:checked ~ .controls label[for="slide3"],
+#slide4:checked ~ .controls label[for="slide4"],
+#slide5:checked ~ .controls label[for="slide5"],
+#slide6:checked ~ .controls label[for="slide6"],
+#slide7:checked ~ .controls label[for="slide7"] {
+    background: black; /* Активная точка станет чёрной */
+}

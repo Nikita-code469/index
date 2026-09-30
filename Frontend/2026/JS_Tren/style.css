@@ -1,0 +1,172 @@
+:root {
+ --bg-c: #cdcbcb;
+ --hd-c: #938e8e;
+ --button-text: #0e0e0e;
+ --text-color: #000;
+}
+
+.header {
+    background-color: var(--hd-c);
+}
+
+body {
+    background-color: var(--bg-c);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.a1 {
+    --hd-c: #0a0a0a;
+    --bg-c: #121111;
+    --button-text: #151414;
+    --text-color: #eee4e4;
+    --pic-btn--bg-c: #fff;
+    --pic-btn--text: #000;
+}
+
+
+body.a0 {
+     --bg-c: #cdcbcb;
+ --hd-c: #938e8e;
+ --button-text: #0e0e0e;
+ --text-color: #000;
+}
+
+#a {
+    color: var(--button-text);
+}
+
+
+.cool-btn {
+    margin: 10px;
+    padding: 14px 32px; /* Внутренние отступы: 14px сверху/снизу, 32px справа/слева. Задаёт размер кнопки вокруг текста. */
+    font-size: 16px; /* Размер шрифта текста. */
+    font-weight: bold; /* Жирность текста (сделать его более заметным). */
+    border: none; /* Убираем стандартную уродливую рамку браузера вокруг кнопки. */
+    border-radius: 50px; /* Скругление углов. Значение 50px делает из прямоугольника аккуратную «капсулу». */
+    cursor: pointer; /* Меняет обычная стрелку курсора на «палец» при наведении, чтобы было понятно, что это кликабельный элемент. */
+    outline: none; /* Убирает синий/чёрный контур фокуса, который браузер рисует при клике или выборе кнопкой Tab. */
+
+    background: linear-gradient(45deg, #ff007f, #7f00ff, #00d4ff, #ff007f);
+    /* Градиент под углом 45 градусов из 4 цветов (розовый, фиолетовый, голубой и снова розовый для плавного круга). */
+
+    background-size: 300% 300%; 
+    /* Растягивает градиент в 3 раза больше самой кнопки. Без этого цвета просто встали бы статично и не переливались. */
+
+    animation: gradientMove 4s ease infinite; 
+    /* Подключает анимацию: название 'gradientMove', длительность 4 секунды, плавный разгон/замедление 'ease', бесконечный повтор 'infinite'. */
+
+    box-shadow: 0 8px 20px rgba(127, 0, 255, 0.4); 
+    /* Тень: 0px смещение по X, 8px вниз по Y, 20px размытие. Цвет — фиолетовый с 40% прозрачности (rgba). */
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    /* Говорит браузеру: «Если меняются параметры transform или box-shadow, делай это плавно за 0.2 секунды, а не мгновенно». */
+}
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; } 
+    /* В начале анимации (0%) мы видим левый край нашего гигантского 300% градиента. */
+
+    50% { background-position: 100% 50%; } 
+    /* На середине (50%) мы сдвигаем фон до самого правого края. */
+
+    100% { background-position: 0% 50%; } 
+    /* В конце (100%) возвращаемся в исходное положение, чтобы цикл запустился заново без рывков. */
+}
+.cool-btn:hover {
+    transform: translateY(-3px) scale(1.05); 
+    /* При наведении курсора: приподнимает кнопку на 3px вверх (translateY) и увеличивает её на 5% (scale). */
+
+    box-shadow: 0 12px 25px rgba(255, 0, 127, 0.6);
+    /* Тень становится чуть больше, опускается ниже и становится розоватой — создаёт иллюзию, что кнопка «оторвалась» от экрана. */
+}
+.cool-btn:active {
+    transform: translateY(1px) scale(0.98); 
+    /* В момент зажатия кнопки мыши: чуть опускает кнопку вниз и сжимает до 98% (эффект физического нажатия). */
+
+    box-shadow: 0 4px 10px rgba(127, 0, 255, 0.4); 
+    /* Тень уменьшается, как будто кнопка приблизилась к фону. */
+}
+
+.pic-btn {
+    padding: 10px 10px;
+    font-weight: bold;
+    margin: 10px;
+    background-color: var(--pic-btn--bg-c, #000 );
+    color: var(--pic-btn--text, #fff);
+}
+
+.cat {
+    display: var(--disp-cat, none);
+}
+
+.cat.see {
+    --disp-cat: block;
+}
+
+.open-btn {
+    margin: 10px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: var(--dis-op-btn, block);
+     cursor: pointer;
+}
+
+.open-btn:hover {
+    transform: translateY(-3px) scale(1.05); 
+    box-shadow: 0 12px 25px rgba(255, 0, 127, 0.6);
+}
+
+.open-btn:active {
+    transform: translateY(1px) scale(0.98); 
+    box-shadow: 0 4px 10px rgba(127, 0, 255, 0.4); 
+}
+
+
+.open-btn.none {
+    --dis-op-btn: none;
+}
+
+.modal {
+    display: var(--disp-mod, none);
+    color: #000;
+}
+
+.modal.see {
+    display: block;
+}
+
+.modal_content {
+    background-color: #fff; /* Белый фон */
+    padding: 24px; /* Внутренние отступы от краёв до текста */
+    border-radius: 12px; /* Скругляем углы карточки */
+    width: 90%; /* Ширина карточки на мобильных устройствах */
+    max-width: 400px; /* Максимальная ширина на компьютерах */
+    position: relative; /* Нужен для позиционирования крестика относительно этой карточки */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3); /* Объёмная мягкая тень */
+    animation: modalAppear 0.3s ease; /* Запускаем анимацию появления длительностью 0.3 секунды */
+}
+
+.close_btn {
+    position: absolute; /* Абсолютное позиционирование внутри .modal-content */
+    top: 12px; /* Отступ от верхнего края карточки */
+    right: 16px; /* Отступ от правого края карточки */
+    font-size: 24px; /* Размер иконки-крестика */
+    cursor: pointer; /* Курсор-палец при наведении */
+    color: #888; /* Серый цвет по умолчанию */
+}
+
+.close_btn:hover {
+    color: #000; /* При наведении курсора крестик становится тёмным */
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0; /* В начале анимации карточка невидима */
+        transform: translateY(-20px); /* И сдвинута на 20px вверх */
+    }
+    to {
+        opacity: 1; /* В конце становится 100% видимой */
+        transform: translateY(0); /* И встаёт ровно на своё место */
+    }
+}
