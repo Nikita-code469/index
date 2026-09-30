@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/nikitaboldin/Desktop/tg_ai_bot/build",
+  "command": "/usr/bin/clang++  -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/tg_ai_bot.dir/main.cpp.o -c /Users/nikitaboldin/Desktop/tg_ai_bot/main.cpp",
+  "file": "/Users/nikitaboldin/Desktop/tg_ai_bot/main.cpp",
+  "output": "CMakeFiles/tg_ai_bot.dir/main.cpp.o"
+}
+]
