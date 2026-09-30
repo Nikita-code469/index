@@ -1,0 +1,3 @@
+/Users/nikitaboldin/Desktop/sierpinski_project/build/CMakeFiles/Sierpinski.dir
+/Users/nikitaboldin/Desktop/sierpinski_project/build/CMakeFiles/edit_cache.dir
+/Users/nikitaboldin/Desktop/sierpinski_project/build/CMakeFiles/rebuild_cache.dir
